@@ -1,1 +1,1 @@
-[Project Page](https://rdt-robotics.github.io/rdt-robotics/) for paper *RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation*
+[Project Page](https://rdt-robotics.github.io/rdt-robotics/) for paper *RDT 2: Enabling Zero-Shot Cross-Embodiment Generalization by Scaling Up UMI Data*
