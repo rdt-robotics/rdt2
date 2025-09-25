@@ -14,7 +14,37 @@ body {
 .section {
     background-color: #000000;
     color: #ffffff;
+    padding-bottom: 0;
 }
+
+.section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 1.2rem;
+}
+
+.section li {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    list-style-type: disc;
+    margin-left: 3%;
+    /* padding-left: 1em; */
+}
+
+.section ul {
+    margin-top: 2rem;
+}
+
+.column.is-full {
+    padding: 0;
+}
+
+/* .title.is-3 {
+    font-weight: bold;
+} */
+
+
 
 .hero {
     background-color: #000000;
@@ -71,8 +101,8 @@ body {
 }
 
 
-.publication-title {
-}
+/* .publication-title {
+} */
 
 .publication-banner {
   max-height: parent;
@@ -110,8 +140,8 @@ body {
     font-weight: bolder;
 }
 
-.publication-authors {
-}
+/* .publication-authors {
+} */
 
 .publication-authors a {
    color: #66b3ff !important;
@@ -266,22 +296,15 @@ code {
 .hero-video-placeholder {
     width: 100%;
     height: 100vh;
-    background-color: #333333;
-    border: 2px dashed #666666;
+    /* background-color: #333333;
+    border: 2px dashed #666666; */
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     z-index: 1;
-}
-
-.placeholder-text {
-    color: #cccccc;
-    font-size: 1.5rem;
-    font-weight: 500;
-    text-align: center;
 }
 
 /* Overlay Content - Positioned over the video */
@@ -311,7 +334,7 @@ code {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 600;
     color: #ffffff;
     margin-bottom: 1rem;
@@ -329,6 +352,7 @@ code {
 
 .hero-author {
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
 
 .author-link {
@@ -362,6 +386,7 @@ code {
     gap: 0.75rem;
     position: relative;
     z-index: 30;
+    font-size: 1.2rem;
 }
 
 .hero-links .link-block {
@@ -377,6 +402,26 @@ code {
 .hero-links .button:hover {
     background-color: rgba(51, 51, 51, 0.9);
     border-color: rgba(255, 255, 255, 0.3);
+}
+
+.video-figure {
+    display: inline-block;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.video-figure video {
+    width: 100%;
+    max-width: 1280px; 
+    height: auto;
+    display: block;
+}
+
+.video-caption {
+    margin-top: 0.5em;
+    /* font-style: italic; */
+    color: #cccccc;
+    font-size: small;
 }
 
 /* Responsive adjustments */

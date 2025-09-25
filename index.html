@@ -36,27 +36,6 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
-  <style>
-    .video-figure {
-        display: inline-block;
-        margin: 1em 0;
-        text-align: center;
-    }
-
-    .video-figure video {
-        width: 100%;
-        max-width: 1280px; 
-        height: auto;
-        display: block;
-    }
-
-    .video-caption {
-        margin-top: 0.5em;
-        /* font-style: italic; */
-        color: #cccccc;
-        font-size: small;
-    }
-    </style>
 </head>
 
 <body>
@@ -86,7 +65,10 @@
     <!-- Full Width Video Container -->
     <div class="hero-video-container">
       <div class="hero-video-placeholder">
-        <div class="placeholder-text">视频占位符</div>
+        <video style="width:100%; height:auto; margin: 0%;" muted loading="lazy" autoplay loop playsinline>
+          <source src="./static/videos/background_compressed.mp4" type="video/mp4">
+        </video>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1);"></div>
       </div>
       
       <!-- Overlay Content - Title, Date, and Links inside video -->
@@ -99,7 +81,7 @@
               <div class="hero-author">
                 <a href="#author" class="author-link">RDT Team</a>
               </div>
-              <span class="hero-date">September 25, 2025</span>
+              <span class="hero-date">September 26, 2025</span>
             </div>
             
             <!-- Action Links -->
@@ -121,7 +103,7 @@
                 </a>
               </span>
               <span class="link-block" style="opacity: 0.6; pointer-events: none; cursor: default;">
-                <a href="https://huggingface.co/datasets/robotics-diffusion-transformer/rdt-ft-data" class="external-link button is-normal is-rounded is-dark">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <svg class="svg-inline--fa fa-database fa-w-14" aria-hidden="true" focusable="false"
                       data-prefix="fas" data-icon="database" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -188,22 +170,25 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
+      <h2 class="title is-3">Introducing RDT 2</h2>
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">Introducing RDT 2</h2>
           <p class="content has-text-justified mb-4">
             RDT 2, the sequel to RDT-1B [<a href="https://rdt-robotics.github.io/rdt-robotics/">1</a>], is <i>the first foundation model</i> that can achieve <b>zero-shot deployment</b> on <b>unseen embodiments</b> for <b>simple open-vocabulary tasks</b> like picking, placing, pressing, wiping, etc. This milestone was made possible by multifaceted efforts:
-            <ul style="list-style-type: disc; margin-left: 2%; margin-bottom: 2%;">
+          </p>
+          <p class="content has-text-justified mb-4">
+            <ul>
               <li><b>Hardware redesign:</b> We redesigned the UMI [<a href="https://umi-gripper.github.io/">2</a>] hardware by applying higher-strength materials and more precise tracking methods, ensuring its reliability for large-scale data collection.</li>
               <li><b>Large and diverse data:</b> We collected 10,000+ hours of human manipulation videos in 100+ different indoor scenes, covering the majority of household tasks that a gripper can do.</li>
               <li><b>VLA pretraining:</b> Employing Residual VQ as an action tokenizer, we pretrained Qwen2.5-VL-7B-Instruct [<a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct">3</a>] on our UMI dataset, enabling superior instruction-following capability.</li>
               <li><b>Diffusion distillation:</b> We trained the RDT model as an action expert with flow-matching loss and then distilled it into a one-step generator, realizing ultra-fast inference speed.</li>
             </ul>
+          </p>
+          <p class="content has-text-justified mb-4">
             Currently, we have open-sourced code and weights for RDT2-VQ and RDT2-FM. Other components, including data, code, and weights for other models, will be released shortly.
           </p>
           <div style="margin-top: 5%;">
             <video style="width:100%; height:auto; margin: 0%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/head.mp4" type="video/mp4">
+              <source src="./static/videos/demo_compressed.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -214,9 +199,8 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
+      <h2 class="title is-3">Vision</h2>
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">Vision</h2>
           <p class="content has-text-justified mb-4">
             <b>The path to embodied superintelligence requires a new paradigm.</b>
           </p>
@@ -230,47 +214,39 @@
             While the ultimate hardware for this vision is on its way, we take a foundational first step by scaling up embodiment-free human data with grippers.
           </p>
         </div>
-      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
+      <h2 class="title is-3">UMI Hardware</h2>
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">UMI Hardware</h2>
           <p class="content has-text-justified mb-4">
             The original UMI [<a href="https://umi-gripper.github.io/">2</a>], manufactured using 3D printing, lacks the requisite strength for long-term, high-frequency data collection. To address this limitation, we redesigned the mechanical structure. The new product utilizes a robust nylon 66 and glass fiber composite material, fabricated using CNC precision machining. We abandoned the original SLAM tracking method since it frequently fails in texture-less indoor environments. Instead, we adopted an infrared light-based positioning system (HTC VIVE Tracker 3.0 [<a href="https://www.vive.com/us/accessory/tracker3/">4</a>]) to track the 6DoF pose of the end-effector.
           </p>
-          <div class="columns is-centered">
-            <figure class="video-figure">
-              <video autoplay loop muted playsinline>
-                  <source src="static/videos/umi.mp4" type="video/mp4">
-              </video>
-              <figcaption class="video-caption">Caption</figcaption>
-            </figure>
-          </div>
+          <figure class="video-figure">
+            <video autoplay loop muted playsinline>
+                <source src="static/videos/umi.mp4" type="video/mp4">
+            </video>
+            <figcaption class="video-caption">Caption</figcaption>
+          </figure>
           <p class="content has-text-justified mb-4">
             Since our hardware provides a unified end-effector across robots and humans, the embodiment gap is minimized, and models trained using such UMI data can be <b>zero-shot</b> deployed on any robot arm. No tele-operation. No human data collection. No fine-tuning. It is totally plug-and-play. All you need to do is: purchase the specified camera and gripper, use the correct flange and 3D printed camera bracket for mounting, and align the TCP coordinate system.
           </p>
-          <div class="columns is-centered">
-            <figure class="video-figure">
-              <video autoplay loop muted playsinline>
-                  <source src="static/videos/deployment.mp4" type="video/mp4">
-              </video>
-              <figcaption class="video-caption">Caption</figcaption>
-            </figure>
-          </div>
-        </div>
+          <figure class="video-figure">
+            <video autoplay loop muted playsinline>
+                <source src="static/videos/deployment.mp4" type="video/mp4">
+            </video>
+            <figcaption class="video-caption">Caption</figcaption>
+          </figure>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
+      <h2 class="title is-3">Dataset</h2>
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">Dataset</h2>
           <p class="content has-text-justified mb-4">
             We manufactured nearly <b>100</b> UMIs and distributed them to <b>100+</b> real-world home and office scenes for data collection. We collected <b>10,000+</b> hours of manipulation data, covering the vast majority of common human manipulation tasks*. Thanks to our hardware's portability and cheapness, we can collect the same amount of data at about <b>1/10 cost</b> and <b>5× speed</b> of teleoperation**. Here, we visualize some example clips from the dataset:
           </p>
@@ -282,18 +258,19 @@
             <br>
             **Cost estimates include equipment cost and labor cost. Speed estimates include manipulation speed and speed of transfer between different locations.
           </p>
-        </div>
-      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">Training</h2>
-          The training process can be divided into three stages.
-          <h3 class="title is-4 has-text-centered">Stage 1</h3>
+          <h2 class="title is-3">Training</h2>
+          <p class="content mb-4">
+            The training process can be divided into three stages.
+          </p>
+          <p class="content mb-4">
+            <b>Stage 1</b>
+          </p>
           <p class="content has-text-justified mb-4">
             In Stage 1, we trained Qwen2.5-VL-7B-Instruct [<a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct">3</a>], a VLM model once pretrained on Internet-scale text and image data, on pure UMI data (i.e., our 10,000-hour UMI dataset). The model accepts two wrist-view fisheye images and a language instruction as input, and outputs discrete action tokens. The action tokens were discretized from continuous robot actions (6DoF end-effector pose and gripper width of both hands) by residual vector quantization (RVQ) [<a href="https://arxiv.org/abs/1711.00937">5</a>][<a href="https://arxiv.org/abs/2012.09841">6</a>][<a href="https://arxiv.org/abs/2203.01941">7</a>]. 
           </p>
@@ -303,53 +280,51 @@
           <p class="content has-text-justified mb-4">
             The outcome model in this stage is named <i>RDT2-VQ</i>. It is slower than other RDT2 variants as it needs to generate 27 tokens autoregressively (i.e., 27 forward passes) to obtain an action chunk.
           </p>
-          <div class="columns is-centered">
-            <figure class="video-figure">
-              <video autoplay loop muted playsinline>
-                  <source src="static/videos/vla_pretrain.mp4" type="video/mp4">
-              </video>
-              <figcaption class="video-caption">Caption</figcaption>
-            </figure>
-          </div>
-          <h3 class="title is-4 has-text-centered">Stage 2</h3>
+          <figure class="video-figure">
+            <video autoplay loop muted playsinline>
+                <source src="static/videos/vla_pretrain.mp4" type="video/mp4">
+            </video>
+            <figcaption class="video-caption">Caption</figcaption>
+          </figure>
+          <p class="content mb-4">
+            <b>Stage 2</b>
+          </p>
           <p class="content has-text-justified mb-4">
             In Stage 2, we replaced the RVQ with a 400M RDT model (an improved version of RDT-1B [<a href="https://rdt-robotics.github.io/rdt-robotics/">1</a>]) as an action expert, which attends to the Qwen backbone's KV during denoising, following the best practice in π0 [<a href="https://www.physicalintelligence.company/blog/pi0">14</a>] and π0.5 [<a href="https://www.physicalintelligence.company/blog/pi05">15</a>]. The model can generate continuous robot actions without discretization errors through five diffusion denoising steps. We copied the weights from the outcome of Stage 1 into the Qwen backbone, freezed it, and trained the RDT model with flow-matching loss.
           </p>
           <p class="content has-text-justified mb-4">
             The outcome model in this stage is named <i>RDT2-FM</i>. We then mixed a tiny amount of real-robot data of UR and Franka with the original UMI data for post-training. We call this post-trained model <i>RDT2-FM-Post</i> to distinguish it from the original. These two models are much faster than the first since they only require one forward pass of Qwen and five forward passes of the 400M RDT model. 
           </p>
-          <div class="columns is-centered">
-            <figure class="video-figure">
-              <video autoplay loop muted playsinline>
-                  <source src="static/videos/diffusion_train.mp4" type="video/mp4">
-              </video>
-              <figcaption class="video-caption">Caption</figcaption>
-            </figure>
-          </div>
-          <h3 class="title is-4 has-text-centered">Stage 3</h3>
+          <figure class="video-figure">
+            <video autoplay loop muted playsinline>
+                <source src="static/videos/diffusion_train.mp4" type="video/mp4">
+            </video>
+            <figcaption class="video-caption">Caption</figcaption>
+          </figure>
+          <p class="content mb-4">
+            <b>Stage 3</b>
+          </p>
           <p class="content has-text-justified mb-4">
             In Stage 3, we distilled RDT2-FM into a one-step diffusion policy without performance drop, where the Qwen backbone still stayed frozen. The model can map pure noise directly to robot actions through only a single diffusion step, similar to GAN [<a href="https://arxiv.org/abs/1406.2661">16</a>].
           </p>
-          <div class="columns is-centered">
-            <figure class="video-figure">
-              <video autoplay loop muted playsinline>
-                  <source src="static/videos/speed.mp4" type="video/mp4">
-              </video>
-              <figcaption class="video-caption">Caption</figcaption>
-            </figure>
-          </div>
+          <figure class="video-figure">
+            <video autoplay loop muted playsinline>
+                <source src="static/videos/speed.mp4" type="video/mp4">
+            </video>
+            <figcaption class="video-caption">Caption</figcaption>
+          </figure>
           <p class="content has-text-justified mb-4">
             The outcome model in this stage is named <i>RDT2-UltraFast</i>. The model is the fastest since it only requires one forward pass of Qwen and one forward pass of the 400M RDT model. This is crucial for many tasks that require real-time responses, such as playing table tennis.
           </p>
-          <div class="columns is-centered">
-            <figure class="video-figure">
-              <video autoplay loop muted playsinline>
-                  <source src="static/videos/distillation.mp4" type="video/mp4">
-              </video>
-              <figcaption class="video-caption">Caption</figcaption>
-            </figure>
-          </div>
-          <h3 class="title is-4 has-text-centered">Model Family</h3>
+          <figure class="video-figure">
+            <video autoplay loop muted playsinline>
+                <source src="static/videos/distillation.mp4" type="video/mp4">
+            </video>
+            <figcaption class="video-caption">Caption</figcaption>
+          </figure>
+          <p class="content mb-4">
+            <b>Model Family</b>
+          </p>
           <p class="content has-text-justified mb-4">
             We list the model family of RDT2 as follows:
             <ul style="list-style-type: disc; margin-left: 2%; margin-bottom: 2%;">
@@ -360,16 +335,16 @@
             </ul>
           </p>
         </div>
-      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">Inference Video Samples</h2>
-          <h3 class="title is-4 has-text-centered">Zero-Shot Deployment</h3>
+      <h2 class="title is-3">Inference Video Samples</h2>
+      <div class="column is-full">
+          <p class="content mb-4">
+            <b>Zero-Shot Deployment</b>
+          </p>
           <p class="content has-text-justified mb-4">
             Setting: <b>4U</b>, Unseen Embodiment, Unseen Scene, Unseen Object, Unseen Language
             <br>
@@ -377,23 +352,21 @@
             <br>
             Note: The instruction prompt, model used, and play speed are shown below each video accordingly.
           </p>
-          <div class="columns is-centered">
             <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
               <source src="./static/videos/1.mp4" type="video/mp4">
             </video>
             <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
               <source src="./static/videos/1_5.mp4" type="video/mp4">
             </video>
-          </div>
           <p class="content has-text-justified mb-4">
             In the following, we tested policy robustness against various language instructions:
           </p>
         </div>
-      </div>
 
-      <div class="columns is-centered">
-        <div class="column content">
-          <h3 class="title is-4" style="text-align: center;">Downstream Tasks</h3>
+        <div class="column is-full">
+          <p class="content mb-4">
+            <b>Downstream Tasks</b>
+          </p>
           <p class="content has-text-justified mb-4">
             Setting: The model is fine-tuned for each downstream task.
             <br>
@@ -415,7 +388,6 @@
               alt="Water level pouring with left hand" style="max-width: 45%; margin: 5px;">
           </div>
         </div>
-      </div>
 
       <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -455,23 +427,22 @@
 
   <!-- <section class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">Quantitative Comparison with Baselines</h2>
+          <h2 class="title is-3">Quantitative Comparison with Baselines</h2>
           <p class="content has-text-justified mb-4">
             🚧We are still working on it. Stay tuned!
           </p>
         </div>
-      </div>
     </div>
   </section> -->
 
 <section class="section" id="author">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
         <div class="column is-full">
-          <h2 class="title is-3 has-text-centered">Author Team</h2>
-          <h3 class="title is-4 has-text-centered">Core Team</h3>
+          <h2 class="title is-3">Author Team</h2>
+          <p class="content mb-4">
+            <b>Core Team</b>
+          </p>
           <p class="content has-text-justified mb-4">
             We are proud to note that all team members contributed equally to the success of this project.
             <ul style="list-style-type: disc; margin-left: 2%; margin-bottom: 2%;">
@@ -482,27 +453,32 @@
             </ul>
           </p>
 
-          <h3 class="title is-4 has-text-centered">Other Contributors</h3>
+          <p class="content mb-4">
+            <b>Other Contributors</b>
+          </p>
           <p class="content has-text-justified mb-4">
             Hengkai Tan, Xiao Ouyang, Zhengyi Wang, Huayu Chen
           </p>
 
-          <h3 class="title is-4 has-text-centered">Advisors</h3>
+          <p class="content mb-4">
+            <b>Advisors</b>
+          </p>
           <p class="content has-text-justified mb-4">
             Hang Su, Jun Zhu
           </p>
         </div>
-      </div>
     </div>
     <!--/ Abstract. -->
   </section>
 
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-        <h2 class="title">Citation</h2>
-        If you find our work helpful, please cite us:
+        <h2 class="title is-3">Citation</h2>
+        <p class="content has-text-justified mb-4">
+            If you find our work helpful, please cite us:
+        </p>
         <div style="position: relative;">
-            <pre><code id="bibtex-code">@article{rdt2,
+            <pre><code id="bibtex-code">@software{rdt2,
     title={RDT2: Enabling Zero-Shot Cross-Embodiment Generalization by Scaling Up UMI Data},
     author={RDT Team},
     url={https://github.com/thu-ml/RDT2},
@@ -514,7 +490,9 @@
                 <i class="fa fa-paste" aria-hidden="true"></i>
             </button>
         </div>
-        Thank you!
+        <p class="content has-text-justified mb-4">
+            Thank you!
+        </p>
     </div>
 </section>
 
@@ -535,9 +513,9 @@ function copyToClipboard() {
 
   <footer class="footer">
     <div class="container">
-      <div class="content has-text-centered">
+      <!-- <div class="content has-text-centered">
         <p>We borrowed the page template from <a href="https://nerfies.github.io/"><span class="dnerf">Nerfies</span></a>.</p>
-      </div>
+      </div> -->
     </div>
   </footer>
 
