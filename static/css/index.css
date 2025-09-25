@@ -1,11 +1,54 @@
 body {
   font-family: 'Noto Sans', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 
 .footer .icon-link {
     font-size: 25px;
-    color: #000;
+    color: #ffffff;
+}
+
+/* Dark theme for sections */
+.section {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.hero {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.hero-body {
+    background-color: #000000;
+}
+
+.container {
+    background-color: transparent;
+}
+
+/* Title and text styling */
+.title {
+    color: #ffffff !important;
+}
+
+.content {
+    color: #ffffff;
+}
+
+.content p {
+    color: #ffffff;
+}
+
+.content ul li {
+    color: #ffffff;
+}
+
+/* Video captions */
+.video-caption {
+    color: #cccccc;
 }
 
 .link-block a {
@@ -56,7 +99,7 @@ body {
 }
 
 .publication-venue {
-    color: #555;
+    color: #cccccc;
     width: fit-content;
     font-weight: bold;
 }
@@ -71,7 +114,7 @@ body {
 }
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+   color: #66b3ff !important;
 }
 
 .publication-authors a:hover {
@@ -125,4 +168,272 @@ body {
 
 .results-carousel video {
   margin: 0;
+}
+
+/* Button styling for dark theme */
+.button.is-dark {
+    background-color: #1a1a1a;
+    border-color: #333333;
+    color: #ffffff;
+}
+
+.button.is-dark:hover {
+    background-color: #333333;
+    border-color: #555555;
+}
+
+/* Link styling */
+a {
+    color: #66b3ff;
+}
+
+a:hover {
+    color: #99ccff;
+}
+
+/* Footer styling */
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.footer .content {
+    color: #ffffff;
+}
+
+.footer .content p {
+    color: #ffffff;
+}
+
+.footer .content a {
+    color: #66b3ff;
+}
+
+.footer .content a:hover {
+    color: #99ccff;
+}
+
+/* Pre and code blocks */
+pre {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+code {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+/* BibTeX section */
+#bibtex-code {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #333333;
+}
+
+/* Results carousel items */
+.results-carousel .item {
+    border: 1px solid #333333;
+    background-color: #1a1a1a;
+}
+
+/* Hero Video Section - Full Width like Figure AI */
+.hero-video-section {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #000000;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.hero-video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hero Video Placeholder */
+.hero-video-placeholder {
+    width: 100%;
+    height: 100vh;
+    background-color: #333333;
+    border: 2px dashed #666666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.placeholder-text {
+    color: #cccccc;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Overlay Content - Positioned over the video */
+.hero-overlay-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.8) 100%);
+    padding: 6rem 0 4rem 0;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.hero-overlay-content * {
+    pointer-events: auto;
+}
+
+.hero-content {
+    padding: 0 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 25;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.2;
+    font-family: 'Google Sans', sans-serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 30;
+}
+
+.hero-meta {
+    margin-bottom: 2rem;
+}
+
+.hero-author {
+    margin-bottom: 0.5rem;
+}
+
+.author-link {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 30;
+    transition: color 0.3s ease;
+}
+
+.author-link:hover {
+    color: #66b3ff;
+    text-decoration: underline;
+}
+
+.hero-date {
+    font-size: 0.9rem;
+    color: #cccccc;
+    font-weight: 400;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+    position: relative;
+    z-index: 30;
+}
+
+.hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 30;
+}
+
+.hero-links .link-block {
+    margin: 0;
+}
+
+.hero-links .button {
+    background-color: rgba(26, 26, 26, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.hero-links .button:hover {
+    background-color: rgba(51, 51, 51, 0.9);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .hero-video-container {
+        height: 70vh;
+    }
+    
+    .hero-video-placeholder {
+        height: 70vh;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content {
+        padding: 0 1rem;
+    }
+    
+    .hero-overlay-content {
+        padding: 3rem 0 2rem 0;
+    }
+    
+    .hero-links {
+        gap: 0.5rem;
+    }
+    
+    .hero-links .button {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-video-container {
+        height: 60vh;
+    }
+    
+    .hero-video-placeholder {
+        height: 60vh;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-overlay-content {
+        padding: 2rem 0 1.5rem 0;
+    }
+    
+    .hero-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .hero-links .link-block {
+        width: auto;
+    }
 }

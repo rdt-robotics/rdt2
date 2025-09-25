@@ -53,7 +53,7 @@
     .video-caption {
         margin-top: 0.5em;
         /* font-style: italic; */
-        color: #666;
+        color: #cccccc;
         font-size: small;
     }
     </style>
@@ -81,143 +81,101 @@
   <!-- </nav> -->
 
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">RDT 2: Enabling Zero-Shot Cross-Embodiment Generalization by Scaling Up UMI Data</h1>
-            <div class="container">
-              <div class="columns is-centered">
-                <div class="column is-8">
-                  <div class="is-size-5 publication-authors has-text-centered">
-                    <span class="author-block">
-                      <a href="#author">RDT Team</a>
-                    </span>
-                    <!-- <span class="author-block">
-                      Songming Liu<sup>*,1</sup>,
-                    </span>
-                    <span class="author-block">
-                      Lingxuan Wu<sup>*,1</sup>,
-                    </span>
-                    <span class="author-block">
-                      Bangguo Li<sup>1</sup>,
-                    </span>
-                    <span class="author-block">
-                      Hengkai Tan<sup>1</sup>,
-                    </span>
-                    <span class="author-block">
-                      Huayu Chen<sup>1</sup>,
-                    </span>
-                    <span class="author-block">
-                      Zhengyi Wang<sup>1</sup>,
-                    </span>
-                    <span class="author-block">
-                      Ke Xu<sup>1</sup>,
-                    </span>
-                    <span class="author-block">
-                      Hang Su<sup>1</sup>,
-                    </span>
-                    <span class="author-block">
-                      Jun Zhu<sup>1</sup>
-                    </span> -->
-                  </div>
-                </div>
+  <!-- Hero Video Section - Full Width like Figure AI -->
+  <section class="hero-video-section">
+    <!-- Full Width Video Container -->
+    <div class="hero-video-container">
+      <div class="hero-video-placeholder">
+        <div class="placeholder-text">视频占位符</div>
+      </div>
+      
+      <!-- Overlay Content - Title, Date, and Links inside video -->
+      <div class="hero-overlay-content">
+        <div class="hero-content">
+            <h1 class="hero-title">RDT 2: Enabling Zero-Shot Cross-Embodiment Generalization by Scaling Up UMI Data</h1>
+            
+            <!-- Author and Date Information -->
+            <div class="hero-meta">
+              <div class="hero-author">
+                <a href="#author" class="author-link">RDT Team</a>
               </div>
+              <span class="hero-date">September 25, 2025</span>
             </div>
-            <!-- <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>Tsinghua University</span><br>
-              <span class="author-block"><sup>*</sup>denotes equal contribution</span>
-            </div> -->
-
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- <span class="link-block">
-                  <a href="https://arxiv.org/abs/2410.07864" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span> -->
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="https://github.com/thu-ml/RDT2" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <!-- Model Link. -->
-                <span class="link-block">
-                  <a href="https://huggingface.co/collections/robotics-diffusion-transformer/rdt-2-68ce9ddbf7dc520a231220d5" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"> 
-                      <img src="static/svg/hf.svg" alt="huggingface" width="24" height="24">
-                    </span>
-                    <span>Model</span>
-                  </a>
-                </span>
-                <!-- Dataset Link. -->
-                <span class="link-block" style="opacity: 0.6; pointer-events: none; cursor: default;">
-                  <a href="https://huggingface.co/datasets/robotics-diffusion-transformer/rdt-ft-data" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <svg class="svg-inline--fa fa-database fa-w-14" aria-hidden="true" focusable="false"
-                        data-prefix="fas" data-icon="database" role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 448 512" data-fa-i2svg="">
-                        <path fill="currentColor"
-                          d="M448 73.143v45.714C448 159.143 347.667 192 224 192S0 159.143 0 118.857V73.143C0 32.857 100.333 0 224 0s224 32.857 224 73.143zM448 176v102.857C448 319.143 347.667 352 224 352S0 319.143 0 278.857V176c48.125 33.143 136.208 48.572 224 48.572S399.874 209.143 448 176zm0 160v102.857C448 479.143 347.667 512 224 512S0 479.143 0 438.857V336c48.125 33.143 136.208 48.572 224 48.572S399.874 369.143 448 336z">
-                        </path>
-                      </svg>
-                    </span>
-                    <span>Data</span>
-                  </a>
-                </span>
-                <!-- PDF Link. -->
-                <span class="link-block" style="opacity: 0.6; pointer-events: none; cursor: default;">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://x.com/EthanNg51931527/status/1846933749071859771" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"> 
-                      <i class="fa-brands fa-twitter"></i>                            
-                    </span>
-                    <span>Twitter</span>
-                  </a>
-                </span>   
-                <span class="link-block">
-                  <a href="discord.html" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"> 
-                      <i class="fa-brands fa-discord"></i>
-                    </span>
-                    <span>Discord</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://rdt-robotics.github.io/rdt-robotics/feishu.html" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"> 
-                      <svg t="1758621592506" class="icon" viewBox="0 0 1335 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4804" width="200" height="200"><path d="M616.34246923 637.06814707s83.08051941-41.33100723 179.38003464-141.42593244c20.30472345-21.08400898 101.26385431-114.00661917 215.7611347-143.8359461 25.61541119-6.6527916 107.70017706-34.31743588 241.39097699 5.7724876 4.12732837 1.24108457 0.92359808 6.76824114-1.86162726 10.33275202s-32.45580863 27.76566275-122.5499002 215.41478522c-7.2156091 15.253797-87.22227887 171.54388367-310.83399646 125.6526112-12.17994736-2.49660105-198.81888518-60.75542588-201.28662241-71.9107575zM363.78172951 90.125s-19.20795063 3.08828074-4.0263099 24.53307028c3.85313516 5.26739447 224.75178287 173.54982266 342.98674886 385.18362899 7.30219647 13.06025217 37.80979047-27.54919473 37.80979047-27.54919473s114.00661917-120.73156623 200.88254938-144.61523161c6.27757993-1.71731469 13.63750076-3.40576721 1.70288361-25.97619178-2.75636233-5.25296338-69.68834967-185.38342136-132.52187165-211.51835596z" p-id="4805" fill="#ffffff"></path><path d="M154.54350493 388.23066187s1.54413996-28.86243558 24.07127124-13.32001346c6.95584699 4.77673325 437.72769223 453.14023288 796.28572541 386.15052035 0 0 3.72325451 1.65959033-6.0899741 11.27078119-3.59337305 3.50678567-364.04189566 327.25672175-798.04633337 48.25799204 0 0-19.68418076-13.33444537-16.22068918-49.91758155z" p-id="4806" fill="#ffffff"></path></svg>
-                    </span>
-                    <span>Feishu</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#BibTeX" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"> 
-                      <svg t="1758713357279" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4694" width="200" height="200"><path d="M156.09136 606.57001a457.596822 457.596822 0 0 1 221.680239-392.516385 50.844091 50.844091 0 1 1 50.844091 86.943396 355.90864 355.90864 0 0 0-138.804369 152.532274h16.77855a152.532274 152.532274 0 1 1-152.532274 152.532274z m406.752731 0a457.596822 457.596822 0 0 1 221.680239-392.007944 50.844091 50.844091 0 1 1 50.844091 86.943396 355.90864 355.90864 0 0 0-138.804369 152.532274h16.77855a152.532274 152.532274 0 1 1-152.532274 152.532274z" fill="#ffffff" p-id="4695"></path></svg>
-                    </span>
-                    <span>BibTeX</span>
-                  </a>
-                </span>           
-              </div>
+            
+            <!-- Action Links -->
+            <div class="hero-links">
+              <span class="link-block">
+                <a href="https://github.com/thu-ml/RDT2" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/collections/robotics-diffusion-transformer/rdt-2-68ce9ddbf7dc520a231220d5" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"> 
+                    <img src="static/svg/hf.svg" alt="huggingface" width="24" height="24">
+                  </span>
+                  <span>Model</span>
+                </a>
+              </span>
+              <span class="link-block" style="opacity: 0.6; pointer-events: none; cursor: default;">
+                <a href="https://huggingface.co/datasets/robotics-diffusion-transformer/rdt-ft-data" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <svg class="svg-inline--fa fa-database fa-w-14" aria-hidden="true" focusable="false"
+                      data-prefix="fas" data-icon="database" role="img" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512" data-fa-i2svg="">
+                      <path fill="currentColor"
+                        d="M448 73.143v45.714C448 159.143 347.667 192 224 192S0 159.143 0 118.857V73.143C0 32.857 100.333 0 224 0s224 32.857 224 73.143zM448 176v102.857C448 319.143 347.667 352 224 352S0 319.143 0 278.857V176c48.125 33.143 136.208 48.572 224 48.572S399.874 209.143 448 176zm0 160v102.857C448 479.143 347.667 512 224 512S0 479.143 0 438.857V336c48.125 33.143 136.208 48.572 224 48.572S399.874 369.143 448 336z">
+                      </path>
+                    </svg>
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span>
+              <span class="link-block" style="opacity: 0.6; pointer-events: none; cursor: default;">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://x.com/EthanNg51931527/status/1846933749071859771" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"> 
+                    <i class="fa-brands fa-twitter"></i>                            
+                  </span>
+                  <span>Twitter</span>
+                </a>
+              </span>   
+              <span class="link-block">
+                <a href="discord.html" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"> 
+                    <i class="fa-brands fa-discord"></i>
+                  </span>
+                  <span>Discord</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://rdt-robotics.github.io/rdt-robotics/feishu.html" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"> 
+                    <svg t="1758621592506" class="icon" viewBox="0 0 1335 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4804" width="200" height="200"><path d="M616.34246923 637.06814707s83.08051941-41.33100723 179.38003464-141.42593244c20.30472345-21.08400898 101.26385431-114.00661917 215.7611347-143.8359461 25.61541119-6.6527916 107.70017706-34.31743588 241.39097699 5.7724876 4.12732837 1.24108457 0.92359808 6.76824114-1.86162726 10.33275202s-32.45580863 27.76566275-122.5499002 215.41478522c-7.2156091 15.253797-87.22227887 171.54388367-310.83399646 125.6526112-12.17994736-2.49660105-198.81888518-60.75542588-201.28662241-71.9107575zM363.78172951 90.125s-19.20795063 3.08828074-4.0263099 24.53307028c3.85313516 5.26739447 224.75178287 173.54982266 342.98674886 385.18362899 7.30219647 13.06025217 37.80979047-27.54919473 37.80979047-27.54919473s114.00661917-120.73156623 200.88254938-144.61523161c6.27757993-1.71731469 13.63750076-3.40576721 1.70288361-25.97619178-2.75636233-5.25296338-69.68834967-185.38342136-132.52187165-211.51835596z" p-id="4805" fill="#ffffff"></path><path d="M154.54350493 388.23066187s1.54413996-28.86243558 24.07127124-13.32001346c6.95584699 4.77673325 437.72769223 453.14023288 796.28572541 386.15052035 0 0 3.72325451 1.65959033-6.0899741 11.27078119-3.59337305 3.50678567-364.04189566 327.25672175-798.04633337 48.25799204 0 0-19.68418076-13.33444537-16.22068918-49.91758155z" p-id="4806" fill="#ffffff"></path></svg>
+                  </span>
+                  <span>Feishu</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#BibTeX" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"> 
+                    <svg t="1758713357279" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4694" width="200" height="200"><path d="M156.09136 606.57001a457.596822 457.596822 0 0 1 221.680239-392.516385 50.844091 50.844091 0 1 1 50.844091 86.943396 355.90864 355.90864 0 0 0-138.804369 152.532274h16.77855a152.532274 152.532274 0 1 1-152.532274 152.532274z m406.752731 0a457.596822 457.596822 0 0 1 221.680239-392.007944 50.844091 50.844091 0 1 1 50.844091 86.943396 355.90864 355.90864 0 0 0-138.804369 152.532274h16.77855a152.532274 152.532274 0 1 1-152.532274 152.532274z" fill="#ffffff" p-id="4695"></path></svg>
+                  </span>
+                  <span>BibTeX</span>
+                </a>
+              </span>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </section>
