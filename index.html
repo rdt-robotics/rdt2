@@ -36,6 +36,27 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <style>
+    .video-figure {
+        display: inline-block;
+        margin: 1em 0;
+        text-align: center;
+    }
+
+    .video-figure video {
+        width: 100%;
+        max-width: 1280px; 
+        height: auto;
+        display: block;
+    }
+
+    .video-caption {
+        margin-top: 0.5em;
+        /* font-style: italic; */
+        color: #666;
+        font-size: small;
+    }
+    </style>
 </head>
 
 <body>
@@ -263,9 +284,25 @@
           <p class="content has-text-justified mb-4">
             The original UMI [<a href="https://umi-gripper.github.io/">2</a>], manufactured using 3D printing, lacks the requisite strength for long-term, high-frequency data collection. To address this limitation, we redesigned the mechanical structure. The new product utilizes a robust nylon 66 and glass fiber composite material, fabricated using CNC precision machining. We abandoned the original SLAM tracking method since it frequently fails in texture-less indoor environments. Instead, we adopted an infrared light-based positioning system (HTC VIVE Tracker 3.0 [<a href="https://www.vive.com/us/accessory/tracker3/">4</a>]) to track the 6DoF pose of the end-effector.
           </p>
+          <div class="columns is-centered">
+            <figure class="video-figure">
+              <video autoplay loop muted playsinline>
+                  <source src="static/videos/umi.mp4" type="video/mp4">
+              </video>
+              <figcaption class="video-caption">Caption</figcaption>
+            </figure>
+          </div>
           <p class="content has-text-justified mb-4">
             Since our hardware provides a unified end-effector across robots and humans, the embodiment gap is minimized, and models trained using such UMI data can be <b>zero-shot</b> deployed on any robot arm. No tele-operation. No human data collection. No fine-tuning. It is totally plug-and-play. All you need to do is: purchase the specified camera and gripper, use the correct flange and 3D printed camera bracket for mounting, and align the TCP coordinate system.
           </p>
+          <div class="columns is-centered">
+            <figure class="video-figure">
+              <video autoplay loop muted playsinline>
+                  <source src="static/videos/deployment.mp4" type="video/mp4">
+              </video>
+              <figcaption class="video-caption">Caption</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </div>
@@ -308,6 +345,14 @@
           <p class="content has-text-justified mb-4">
             The outcome model in this stage is named <i>RDT2-VQ</i>. It is slower than other RDT2 variants as it needs to generate 27 tokens autoregressively (i.e., 27 forward passes) to obtain an action chunk.
           </p>
+          <div class="columns is-centered">
+            <figure class="video-figure">
+              <video autoplay loop muted playsinline>
+                  <source src="static/videos/vla_pretrain.mp4" type="video/mp4">
+              </video>
+              <figcaption class="video-caption">Caption</figcaption>
+            </figure>
+          </div>
           <h3 class="title is-4 has-text-centered">Stage 2</h3>
           <p class="content has-text-justified mb-4">
             In Stage 2, we replaced the RVQ with a 400M RDT model (an improved version of RDT-1B [<a href="https://rdt-robotics.github.io/rdt-robotics/">1</a>]) as an action expert, which attends to the Qwen backbone's KV during denoising, following the best practice in π0 [<a href="https://www.physicalintelligence.company/blog/pi0">14</a>] and π0.5 [<a href="https://www.physicalintelligence.company/blog/pi05">15</a>]. The model can generate continuous robot actions without discretization errors through five diffusion denoising steps. We copied the weights from the outcome of Stage 1 into the Qwen backbone, freezed it, and trained the RDT model with flow-matching loss.
@@ -315,13 +360,37 @@
           <p class="content has-text-justified mb-4">
             The outcome model in this stage is named <i>RDT2-FM</i>. We then mixed a tiny amount of real-robot data of UR and Franka with the original UMI data for post-training. We call this post-trained model <i>RDT2-FM-Post</i> to distinguish it from the original. These two models are much faster than the first since they only require one forward pass of Qwen and five forward passes of the 400M RDT model. 
           </p>
+          <div class="columns is-centered">
+            <figure class="video-figure">
+              <video autoplay loop muted playsinline>
+                  <source src="static/videos/diffusion_train.mp4" type="video/mp4">
+              </video>
+              <figcaption class="video-caption">Caption</figcaption>
+            </figure>
+          </div>
           <h3 class="title is-4 has-text-centered">Stage 3</h3>
           <p class="content has-text-justified mb-4">
             In Stage 3, we distilled RDT2-FM into a one-step diffusion policy without performance drop, where the Qwen backbone still stayed frozen. The model can map pure noise directly to robot actions through only a single diffusion step, similar to GAN [<a href="https://arxiv.org/abs/1406.2661">16</a>].
           </p>
+          <div class="columns is-centered">
+            <figure class="video-figure">
+              <video autoplay loop muted playsinline>
+                  <source src="static/videos/speed.mp4" type="video/mp4">
+              </video>
+              <figcaption class="video-caption">Caption</figcaption>
+            </figure>
+          </div>
           <p class="content has-text-justified mb-4">
             The outcome model in this stage is named <i>RDT2-UltraFast</i>. The model is the fastest since it only requires one forward pass of Qwen and one forward pass of the 400M RDT model. This is crucial for many tasks that require real-time responses, such as playing table tennis.
           </p>
+          <div class="columns is-centered">
+            <figure class="video-figure">
+              <video autoplay loop muted playsinline>
+                  <source src="static/videos/distillation.mp4" type="video/mp4">
+              </video>
+              <figcaption class="video-caption">Caption</figcaption>
+            </figure>
+          </div>
           <h3 class="title is-4 has-text-centered">Model Family</h3>
           <p class="content has-text-justified mb-4">
             We list the model family of RDT2 as follows:
