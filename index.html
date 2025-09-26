@@ -651,6 +651,68 @@
               </div>
             </div>
             In the following, we tested policy robustness against various scene and lighting conditions:
+            <div class="dataset-carousel-container" id="zeroShotSceneCarousel">
+              <div class="dataset-carousel">
+                <button class="carousel-btn carousel-btn-prev">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="arrowGradientLeft7" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="url(#arrowGradientLeft7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <div class="carousel-track-container">
+                  <div class="carousel-track">
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ds/ur-pick_ds-235-248-4x.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ds/ur-pick_ds-222-246-4x.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ds/copy_5E21F282-C92C-467E-8FDC-629E0CD6B5F3.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ds/copy_51C7B1AB-AA00-465D-AC0D-A39EEB287600.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ds/copy_BC2EB863-EC6E-4188-A56F-3D7305BC1116.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ds/copy_D783D8B8-0A6D-40E3-B162-99E6C736DFFF.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-btn carousel-btn-next">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="arrowGradientRight7" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="url(#arrowGradientRight7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="video-caption-container">
+                <span class="video-caption prompt">Loading caption...</span>
+              </div>
+              <div class="carousel-indicators">
+                <div class="indicator active" data-index="0"></div>
+                <div class="indicator" data-index="1"></div>
+                <div class="indicator" data-index="2"></div>
+              </div>
+            </div>
           </p>
         </div>
 
@@ -1188,6 +1250,24 @@ function copyToClipboard() {
           {
             src: './static/videos/zero-shot/ur-picksame-437-450-4x.mp4',
             caption: 'Left : "Pick up the cabbage slowly with the right hand." — RDT-FM, 4x speed <br>Right: "Pick up the cabbage steadily with the right hand." — RDT-FM, 4x speed'
+          },
+        ]
+      });
+      const zeroShotSceneCarousel = new VideoCarousel({
+        containerId: 'zeroShotSceneCarousel',
+        loadCaptionsFromFile: false,
+        videos: [
+          {
+            src: './static/videos/zero-shot/ds/ur-pick_ds-235-248-4x.mp4',
+            caption: 'Left : "Pick up the pink snack cup with the left hand." — RDT-FM, 4x speed <br>Right: "Pick up the red snack bag with the right hand." — RDT-FM, 4x speed'
+          },
+          {
+            src: './static/videos/zero-shot/ds/ur-pick_ds-222-246-4x.mp4',
+            caption: 'Left : "Pick up the banana with the left hand." — RDT-FM, 4x speed <br>Right: "Pick up the pink snack bag with the right hand." — RDT-FM, 4x speed'
+          },
+          {
+            src: './static/videos/zero-shot/ds/ur-pick_ds-222-246-4x.mp4',
+            caption: 'Left : "Pick up the golden snack with the right hand." — RDT-FM, 4x speed <br>Right: "Pick up the green snack steadily with the left hand." — RDT-FM, 4x speed'
           },
         ]
       });
