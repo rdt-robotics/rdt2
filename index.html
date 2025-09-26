@@ -1174,6 +1174,44 @@ function copyToClipboard() {
 
   <!-- Dataset Video Carousel JavaScript -->
   <script src="./static/js/carousel.js"></script>
+  
+  <!-- Apple-style button glow effect -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add mouse tracking glow effect to all dark buttons
+      const buttons = document.querySelectorAll('.button.is-dark');
+      
+      buttons.forEach(button => {
+        button.addEventListener('mousemove', function(e) {
+          const rect = button.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          // Update the position of the glow effect
+          button.style.setProperty('--mouse-x', x + 'px');
+          button.style.setProperty('--mouse-y', y + 'px');
+          
+          // Add active class for gradient border
+          button.classList.add('glow-active');
+        });
+        
+        button.addEventListener('mouseleave', function() {
+          // Remove active class when mouse leaves
+          button.classList.remove('glow-active');
+        });
+        
+        button.addEventListener('mouseenter', function(e) {
+          const rect = button.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          button.style.setProperty('--mouse-x', x + 'px');
+          button.style.setProperty('--mouse-y', y + 'px');
+        });
+      });
+    });
+  </script>
+  
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const datasetCarousel = new VideoCarousel({
@@ -1223,7 +1261,7 @@ function copyToClipboard() {
           },
           {
             src: './static/videos/zero-shot/franka-pick-204-218-4x.mp4',
-            caption: 'Left: "Press the keyboard using the left hand." — RDT-VQ, 4x speed <br>Right: "Press the keyboard using the right hand." — RDT-VQ, 4x speed'
+            caption: 'Left: "Press the keyboard using the left hand." — RDT-VQ, 4x speed <br>Right: "Press the keyboard using the left hand." — RDT-VQ, 4x speed'
           },
           {
             src: './static/videos/zero-shot/franka-pick-204-218-4x.mp4',

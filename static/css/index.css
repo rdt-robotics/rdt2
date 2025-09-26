@@ -200,16 +200,109 @@ body {
   margin: 0;
 }
 
-/* Button styling for dark theme */
+/* Button styling for dark theme with Apple-style glow effect */
 .button.is-dark {
-    background-color: #1a1a1a;
-    border-color: #333333;
+    background-color: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Create the glow effect container */
+.button.is-dark::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, 
+        rgba(255, 255, 255, 0.3) 0%, 
+        rgba(255, 255, 255, 0.15) 30%,
+        rgba(255, 255, 255, 0.05) 60%,
+        transparent 100%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: width 0.6s ease, height 0.6s ease, opacity 0.3s ease;
+    pointer-events: none;
+    filter: blur(20px);
+    z-index: 0;
+}
+
+/* Mouse tracking glow spot */
+.button.is-dark::after {
+    content: '';
+    position: absolute;
+    left: var(--mouse-x, 50%);
+    top: var(--mouse-y, 50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0.15) 20%,
+        rgba(255, 255, 255, 0.08) 40%,
+        transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    filter: blur(25px);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+/* Ensure button content stays above the glow */
+.button.is-dark > * {
+    position: relative;
+    z-index: 1;
 }
 
 .button.is-dark:hover {
-    background-color: #333333;
-    border-color: #555555;
+    background-color: rgba(30, 30, 30, 0.95);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+        0 10px 40px rgba(255, 255, 255, 0.15),
+        0 2px 10px rgba(0, 0, 0, 0.5),
+        inset 0 0 30px rgba(255, 255, 255, 0.05);
+}
+
+.button.is-dark:hover::before {
+    width: 400px;
+    height: 400px;
+    opacity: 0.8;
+}
+
+.button.is-dark:hover::after {
+    opacity: 1;
+}
+
+/* Add subtle gradient border on hover with animated glow */
+.button.is-dark.glow-active {
+    background: 
+        linear-gradient(rgba(30, 30, 30, 0.95), rgba(30, 30, 30, 0.95)) padding-box,
+        linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.3) 0%, 
+            rgba(255, 255, 255, 0.1) 25%,
+            rgba(255, 255, 255, 0.05) 50%, 
+            rgba(255, 255, 255, 0.1) 75%,
+            rgba(255, 255, 255, 0.3) 100%) border-box;
+    border: 1px solid transparent;
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
 }
 
 /* Link styling */
@@ -394,14 +487,92 @@ code {
 }
 
 .hero-links .button {
-    background-color: rgba(26, 26, 26, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background-color: rgba(26, 26, 26, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.hero-links .button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, 
+        rgba(255, 255, 255, 0.4) 0%, 
+        rgba(255, 255, 255, 0.2) 30%,
+        rgba(255, 255, 255, 0.1) 60%,
+        transparent 100%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: width 0.6s ease, height 0.6s ease, opacity 0.3s ease;
+    pointer-events: none;
+    filter: blur(25px);
+    z-index: 0;
+}
+
+.hero-links .button::after {
+    content: '';
+    position: absolute;
+    left: var(--mouse-x, 50%);
+    top: var(--mouse-y, 50%);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle,
+        rgba(255, 255, 255, 0.35) 0%,
+        rgba(255, 255, 255, 0.2) 20%,
+        rgba(255, 255, 255, 0.1) 40%,
+        transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    filter: blur(30px);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.hero-links .button > * {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-links .button:hover {
-    background-color: rgba(51, 51, 51, 0.9);
-    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(40, 40, 40, 0.8);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 
+        0 15px 50px rgba(255, 255, 255, 0.2),
+        0 5px 15px rgba(0, 0, 0, 0.6),
+        inset 0 0 40px rgba(255, 255, 255, 0.08);
+}
+
+.hero-links .button:hover::before {
+    width: 500px;
+    height: 500px;
+    opacity: 0.9;
+}
+
+.hero-links .button:hover::after {
+    opacity: 1;
+}
+
+.hero-links .button.glow-active {
+    background: 
+        linear-gradient(rgba(40, 40, 40, 0.8), rgba(40, 40, 40, 0.8)) padding-box,
+        linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.4) 0%, 
+            rgba(255, 255, 255, 0.15) 25%,
+            rgba(255, 255, 255, 0.08) 50%, 
+            rgba(255, 255, 255, 0.15) 75%,
+            rgba(255, 255, 255, 0.4) 100%) border-box;
+    border: 1px solid transparent;
 }
 
 .video-figure {
@@ -508,8 +679,8 @@ code {
     }
     
     .hero-title {
-        font-size: 1.4rem;
-        line-height: 1.15;
+        font-size: 1.8rem;
+        line-height: 1.2;
         padding: 0 0.5rem;
     }
     
@@ -552,16 +723,28 @@ code {
     }
     
     .title.is-3 {
-        font-size: 1.5rem;
+        font-size: 1.75rem !important;
     }
     
     .content {
-        font-size: 0.8rem;
-        line-height: 1.55;
+        font-size: 0.75rem !important;
+        line-height: 1.5 !important;
     }
     
     .content p, .content ul li {
-        font-size: 0.8rem;
+        font-size: 0.75rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .section p {
+        font-size: 0.75rem !important;
+        line-height: 1.5 !important;
+        margin-top: 0.8rem !important;
+    }
+    
+    .section li {
+        font-size: 0.75rem !important;
+        line-height: 1.5 !important;
     }
     
     /* Double video carousel for mobile */
