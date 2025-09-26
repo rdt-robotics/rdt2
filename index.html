@@ -399,10 +399,10 @@
             In Stage 1, we trained Qwen2.5-VL-7B-Instruct [<a href="https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct">3</a>], a VLM model once pretrained on Internet-scale text and image data, on pure UMI data (i.e., our 10,000-hour UMI dataset). The model accepts two wrist-view fisheye images and a language instruction as input, and outputs discrete action tokens. The action tokens were discretized from continuous robot actions (6DoF end-effector pose and gripper width of both hands) by residual vector quantization (RVQ) [<a href="https://arxiv.org/abs/1711.00937">5</a>][<a href="https://arxiv.org/abs/2012.09841">6</a>][<a href="https://arxiv.org/abs/2203.01941">7</a>]. 
           </p>
           <p class="content has-text-justified mb-4">
-            We took several measures to stabilize VQ training and improve codebook utilization, including factorized codes, cosine similarity, EMA updates, and codebook restart [<a href="https://github.com/karpathy/deep-vector-quantization">8</a>][<a href="https://arxiv.org/abs/2107.03312">9</a>][<a href="https://arxiv.org/abs/2110.04627">10</a>]. We also decoupled the discretization of rotation, translation, and gripper width as we found it helpful to avoid conflicts among multiple training objectives. As a result, we efficiently compress an action chunk of 0.8 seconds long (30 Hz) into a fixed-length 27 tokens. At the same level of precision, this length is <b>1/3</b> that of FAST [<a href="https://www.physicalintelligence.company/research/fast">11</a>] and <b>1/8</b> that of binning [<a href="https://arxiv.org/abs/2212.06817">12</a>][<a href="https://arxiv.org/abs/2307.15818">13</a>].
+            We took several measures to stabilize VQ training and improve codebook utilization, including factorized codes, cosine similarity, EMA updates, and codebook restart [<a href="https://github.com/karpathy/deep-vector-quantization">8</a>][<a href="https://arxiv.org/abs/2107.03312">9</a>][<a href="https://arxiv.org/abs/2110.04627">10</a>]. We also decoupled the discretization of rotation, translation, and gripper width as we found it helpful to avoid conflicts among multiple training objectives. As a result, we efficiently compress an action chunk of 0.8 seconds long (30 Hz) into a fixed-length 27 tokens. At the same level of precision, this length is <b>1/3</b> that of FAST [<a href="https://www.physicalintelligence.company/research/fast">11</a>] and <b>1/8</b> that of binning [<a href="https://arxiv.org/abs/2212.06817">12</a>][<a href="https://arxiv.org/abs/2307.15818">13</a>]. Thus, our model has a significantly smaller latency because of fewer forward passes to generate an action chunk.
           </p>
           <p class="content has-text-justified mb-4">
-            The outcome model in this stage is named <i>RDT2-VQ</i>. It is slower than other RDT2 variants as it needs to generate 27 tokens autoregressively (i.e., 27 forward passes) to obtain an action chunk.
+            The outcome model in this stage is named <i>RDT2-VQ</i>. It needs to generate 27 tokens autoregressively (i.e., 27 forward passes) to obtain an action chunk.
           </p>
           <figure class="video-figure">
             <video autoplay loop muted playsinline loading="lazy">
@@ -437,6 +437,9 @@
             </video>
             <figcaption class="video-caption">Comparisons of inference speed between ours and baselines.</figcaption>
           </figure>
+          <p class="content has-text-justified mb-4">
+            Thanks to the effective RVQ and the one-step generator, the inference speed of our 7B models is comparable to and even exceeds the 3B baseline.
+          </p>
           <p class="content has-text-justified mb-4">
             The outcome model in this stage is named <i>RDT2-UltraFast</i>. The model is the fastest since it only requires one forward pass of Qwen and one forward pass of the 400M RDT model. This is crucial for many tasks that require real-time responses, such as playing table tennis.
           </p>
@@ -1255,7 +1258,7 @@ function copyToClipboard() {
         videos: [
           {
             src: './static/videos/zero-shot/ur-pick-008-032-4x.mp4',
-            caption: 'Left: "Pick up the small green bottle using the right hand." — RDT-VQ, 4x speed <br>Right: "Pick up the black bottle using the right hand." — RDT-VQ, 2x speed'
+            caption: 'Left: "Pick up the small green bottle using the left hand." — RDT-VQ, 4x speed <br>Right: "Pick up the black bottle using the right hand." — RDT-VQ, 2x speed'
           },
           {
             src: './static/videos/zero-shot/franka-pick-035-047-2x.mp4',
@@ -1279,7 +1282,7 @@ function copyToClipboard() {
           },
           {
             src: './static/videos/zero-shot/franka-pick-204-218-4x.mp4',
-            caption: 'Left: "Pick up the green vegetable using the right hand. Put the vegetable on the paper box using the left hand." — RDT-FM, 4x speed <br>Right: "Pick up the blue stapler using the right hand." — RDT-FM, 4x speed'
+            caption: 'Left: "Pick up the green vegetable using the right hand. Put the vegetable on the paper box using the right hand." — RDT-FM, 4x speed <br>Right: "Pick up the blue stapler using the right hand." — RDT-FM, 4x speed'
           },
           {
             src: './static/videos/zero-shot/franka-pick-204-218-4x.mp4',
