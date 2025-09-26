@@ -469,7 +469,7 @@
 
   <section class="section">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Inference Video Samples</h2>
+      <h2 class="title is-3">Results</h2>
       <div class="column is-full">
           <p class="content mb-4">
             <b>Zero-Shot Deployment</b>
@@ -497,11 +497,20 @@
             <b>Downstream Tasks</b>
           </p>
           <p class="content has-text-justified mb-4">
-            Setting: The model is fine-tuned for each downstream task.
-            <br>
-            Model: RDT2-UltraFast
-            <br>
-            Note: The instruction prompt and play speed are shown below each video accordingly.
+            To get a glimpse of the in-distribution performance of RDT2-UltraFast, 
+            we curated a series of six challenging downstream tasks. 
+            These benchmarks were designed to probe the limits of the model in 
+            real-world scenarios demanding exceptional speed, 
+            precision, and adaptability.
+          </p>
+          <p class="content has-text-justified mb-4">
+            The archery challenge, in particular, presents an extreme test of reaction time. 
+            The task requires intercepting an arrow shot from a 20-pound bow at a distance of 15 meters, 
+            a feat that is exceptionally difficult, if not impossible, for a human. 
+            Our model accomplished this formidable objective with a reaction time of about <b>100 milliseconds</b> (inference time + camera latency), 
+            nearly the fastest recorded human reaction.
+            This achievement underscores a significant milestone in robotic capabilities, 
+            approaching the best human performance in a high-stakes, rapid-response scenario.
           </p>
           <div class="dataset-carousel-container" id="arrowCarousel">
             <div class="dataset-carousel">
@@ -551,6 +560,14 @@
             </div>
           </div>
 
+          <p class="content has-text-justified mb-4">
+          The subsequent two tasks necessitated not only reaction but also high-precision control and fine-grained coordination. 
+          In the incense extinguishing task, the model was required to swing a flame at high velocity, 
+          continuously monitoring its state until it was fully extinguished. 
+          The execution of this task demanded a trajectory of remarkable continuity and smoothness; 
+          any pause or hesitation will give the flame enough time to reignite.
+          </p>
+
           <div class="dataset-carousel-container" id="incenseCarousel">
             <div class="dataset-carousel">
               <button class="carousel-btn carousel-btn-prev">
@@ -599,6 +616,14 @@
             </div>
           </div>
           
+          <p class="content has-text-justified mb-4">
+          In the table tennis task, our model demonstrated outstanding predictive capabilities. 
+          This was accomplished despite the robot arm's maximum velocity of <b>1 m/s</b>, 
+          a figure less than one-tenth of a human's arm speed. 
+          To compensate for this physical limitation, the robot must accurately predict the ball's trajectory in advance and 
+          plan its own swing path — all of which emerges automatically during end-to-end training without any hand-crafted prior.
+          </p>
+
           <div class="dataset-carousel-container" id="pingpongCarousel">
             <div class="dataset-carousel">
               <button class="carousel-btn carousel-btn-prev">
@@ -647,7 +672,13 @@
             </div>
           </div>
 
-          Deformable
+          <p class="content has-text-justified mb-4">
+            Further evaluations were conducted to probe RDT2-UltraFast's proficiency in manipulating deformable objects. 
+            Such objects, characterized by their near-infinite degrees of freedom, 
+            present substantial challenges to previous paradigms that rely on explicit computer graphics models or motion planning. 
+            The inherent complexities suggest that an end-to-end training approach, such as the one employed by RDT 2, 
+            may be uniquely suited to mastering these tasks.
+          </p>
 
           <div class="dataset-carousel-container" id="unzipCarousel">
             <div class="dataset-carousel">
@@ -702,6 +733,14 @@
               <div class="indicator" data-index="2"></div>
             </div>
           </div>
+
+          <p class="content has-text-justified mb-4">
+            In the fabric folding task, the model exhibited a remarkable ability to understand and manipulate the complex dynamics of cloth. 
+            The task required not only precise control but also an intuitive grasp of how the fabric would respond to various manipulations. 
+            Besides, we observed a remarkable degree of generalization. The model autonomously adapted its manipulation strategy to fold 
+            previously unseen garments of varying textures and sizes successfully. 
+            This generalization is attributed to the large-scale pre-training.
+          </p>
 
           <div class="dataset-carousel-container" id="foldCarousel">
             <div class="dataset-carousel">
@@ -763,7 +802,9 @@
             </div>
           </div>
 
-          Instruction following
+          <p class="content has-text-justified mb-4">
+            The final experiment assessed the performance on a long-horizon, multi-stage task: setting a table according to human instructions. A critical observation from this trial was the model's impressive capacity for error correction. While long-range tasks are often susceptible to the accumulation of cascading errors, RDT2-UltraFast demonstrated the ability to detect and rectify deviations from the intended plan promptly. We hypothesize that this resilience stems from the extensive and diverse scenarios encountered during pre-training, which effectively mitigates the out-of-distribution (OOD) problem.
+          </p>
           
           <div class="dataset-carousel-container" id="plateCarousel">
             <div class="dataset-carousel">
