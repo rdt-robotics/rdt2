@@ -72,7 +72,7 @@ class VideoCarousel {
 
   updateCaptionDisplay(index) {
     if (this.captionElement && this.captions[index]) {
-      this.captionElement.textContent = this.captions[index];
+      this.captionElement.innerHTML = this.captions[index];
     }
   }
 

@@ -480,15 +480,177 @@
             Model: RDT2-VQ & RDT2-FM
             <br>
             Note: The instruction prompt, model used, and play speed are shown below each video accordingly.
-          </p>
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/1.mp4" type="video/mp4">
-            </video>
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/1_5.mp4" type="video/mp4">
-            </video>
-          <p class="content has-text-justified mb-4">
+            <div class="dataset-carousel-container" id="zeroShotCarousel">
+              <div class="dataset-carousel">
+                <button class="carousel-btn carousel-btn-prev">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="arrowGradientLeft7" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="url(#arrowGradientLeft7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <div class="carousel-track-container">
+                  <div class="carousel-track">
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/franka-pick-146-203-4x.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/franka-pick-035-047-2x.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/franka-pickandplace-233-258-4x.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/franka-pickandplace-237-304-4x.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-shake-640-720-4x.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-shake-245-350-4x.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-wipetable-210-300-8x.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-wipetable-727-805-8x.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-pickintobowl-110-140-8x.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-wipeobject-432-458-8x.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-press-550-610-4x.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-press-111-145-4x.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/franka-pickandplace-400-436-4x.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-pick-035-050-4x.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="carousel-slide active" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-pick-110-140-4x.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-pick-115-125-4x.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-pick-008-032-4x.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/franka-pick-204-218-4x.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-btn carousel-btn-next">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="arrowGradientRight7" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="url(#arrowGradientRight7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="video-caption-container">
+                <span class="video-caption prompt">Loading caption...</span>
+              </div>
+              <div class="carousel-indicators">
+                <div class="indicator active" data-index="0"></div>
+                <div class="indicator" data-index="1"></div>
+                <div class="indicator" data-index="2"></div>
+                <div class="indicator" data-index="3"></div>
+                <div class="indicator" data-index="4"></div>
+                <div class="indicator" data-index="5"></div>
+                <div class="indicator" data-index="6"></div>
+                <div class="indicator" data-index="7"></div>
+                <div class="indicator" data-index="8"></div>
+              </div>
+            </div>
             In the following, we tested policy robustness against various language instructions:
+            <div class="dataset-carousel-container" id="zeroShotLanguageCarousel">
+              <div class="dataset-carousel">
+                <button class="carousel-btn carousel-btn-prev">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="arrowGradientLeft7" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="url(#arrowGradientLeft7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+                <div class="carousel-track-container">
+                  <div class="carousel-track">
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-picksame-305-322-4x.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-picksame-437-450-4x.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="carousel-slide" style="display: flex; gap: 0;">
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-pick_slow-000-030-4x.mp4" type="video/mp4">
+                      </video>
+                      <video autoplay muted loop playsinline loading="lazy" style="width: 50%; flex-shrink: 0;">
+                        <source src="static/videos/zero-shot/ur-pick_steady-000-017.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-btn carousel-btn-next">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="arrowGradientRight7" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="url(#arrowGradientRight7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="video-caption-container">
+                <span class="video-caption prompt">Loading caption...</span>
+              </div>
+              <div class="carousel-indicators">
+                <div class="indicator active" data-index="0"></div>
+                <div class="indicator" data-index="1"></div>
+              </div>
+            </div>
+            In the following, we tested policy robustness against various scene and lighting conditions:
           </p>
         </div>
 
@@ -931,7 +1093,63 @@ function copyToClipboard() {
           '036_ep_20250621_135355_combined_0-7s'
         ]
       });
-
+      
+      const zeroShotCarousel = new VideoCarousel({
+        containerId: 'zeroShotCarousel',
+        loadCaptionsFromFile: false,
+        videos: [
+          {
+            src: './static/videos/zero-shot/ur-pick-008-032-4x.mp4',
+            caption: 'Left: "Pick up the small green bottle using the right hand." — RDT-VQ, 4x speed <br>Right: "Pick up the black bottle using the right hand." — RDT-VQ, 2x speed'
+          },
+          {
+            src: './static/videos/zero-shot/franka-pick-035-047-2x.mp4',
+            caption: 'Left: "Pick up the brown box using the right hand. Put the brown box on the purple towel using the right hand." — RDT-FM, 4x speed <br>Right: "Pick up the red fruit using the right hand. Put the red fruit on the purple towel using the right hand." — RDT-FM, 4x speed'
+          },
+          {
+            src: './static/videos/zero-shot/franka-pick-146-203-4x.mp4',
+            caption: 'Left: "Shake the white bottle using the right hand." — RDT-VQ, 4x speed <br>Right: "Shake the plastic bottle using the right hand." — RDT-VQ, 4x speed'
+          },
+          {
+            src: './static/videos/zero-shot/franka-pick-204-218-4x.mp4',
+            caption: 'Left: "Wipe the table using the blue towel with the left hand." — RDT-VQ, 8x speed <br>Right: "Wipe the table using the blue towel with the right hand." — RDT-VQ, 8x speed'
+          },
+          {
+            src: './static/videos/zero-shot/franka-pick-204-218-4x.mp4',
+            caption: 'Left: "Pick up the banana using the right hand. Put the banana into the bowl using the right hand." — RDT-VQ, 8x speed <br>Right: "Pick up the pink towel using the left hand. Wipe the bowl with the pink towel using the left hand." — RDT-VQ, 4x speed'
+          },
+          {
+            src: './static/videos/zero-shot/franka-pick-204-218-4x.mp4',
+            caption: 'Left: "Press the keyboard using the left hand." — RDT-VQ, 4x speed <br>Right: "Press the keyboard using the right hand." — RDT-VQ, 4x speed'
+          },
+          {
+            src: './static/videos/zero-shot/franka-pick-204-218-4x.mp4',
+            caption: 'Left: "Pick up the green vegetable using the right hand. Put the vegetable on the paper box using the left hand." — RDT-FM, 4x speed <br>Right: "Pick up the blue stapler using the right hand." — RDT-FM, 4x speed'
+          },
+          {
+            src: './static/videos/zero-shot/franka-pick-204-218-4x.mp4',
+            caption: 'Left: "Pick up the green vegetable using the right hand." — RDT-VQ, 4x speed <br>Right: "Pick up the towel using the right hand." — RDT-VQ, 4x speed'
+          },
+          {
+            src: './static/videos/zero-shot/franka-pick-204-218-4x.mp4',
+            caption: 'Left: "Pick up the tissue box using the left hand." — RDT-VQ, 4x speed <br>Right: "Pick up the white towel using the right hand." — RDT-FM, 4x speed'
+          },
+        ]
+      });
+      const zeroShotLanguageCarousel = new VideoCarousel({
+        containerId: 'zeroShotLanguageCarousel',
+        loadCaptionsFromFile: false,
+        videos: [
+          {
+            src: './static/videos/zero-shot/ur-picksame-305-322-4x.mp4',
+            caption: 'Left : "Pick up the blue toy with the right hand." — RDT-VQ, 4x speed <br>Right: "Pick up the blue toy with the left hand." — RDT-VQ, 4x speed'
+          },
+          {
+            src: './static/videos/zero-shot/ur-picksame-437-450-4x.mp4',
+            caption: 'Left : "Pick up the cabbage slowly with the right hand." — RDT-FM, 4x speed <br>Right: "Pick up the cabbage steadily with the right hand." — RDT-FM, 4x speed'
+          },
+        ]
+      });
       const arrowCarousel = new VideoCarousel({
         containerId: 'arrowCarousel',
         loadCaptionsFromFile: false,
