@@ -76,11 +76,6 @@ body {
     color: #ffffff;
 }
 
-/* Video captions */
-.video-caption {
-    color: #cccccc;
-}
-
 .link-block a {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -418,16 +413,10 @@ code {
 .video-figure video {
     width: 100%;
     max-width: 1280px; 
-    height: auto;
+    /* height: auto; */
     display: block;
 }
 
-.video-caption {
-    margin-top: 0.5em;
-    /* font-style: italic; */
-    color: #cccccc;
-    font-size: small;
-}
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
@@ -545,7 +534,7 @@ code {
 }
 
 .video-caption-container {
-    padding: 0.75rem 2rem 0.5rem 2rem;
+    padding: 0.75rem 2rem 0.75rem 2rem;
     text-align: center;
     background-color: transparent;
     position: relative;
@@ -553,14 +542,20 @@ code {
 }
 
 .video-caption {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 400;
-    font-style: italic;
+    /* font-style: italic; */
     color: #cccccc;
+    margin-top: 1rem;
     line-height: 1.4;
     display: block;
     margin-bottom: 0;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.prompt {
+    margin-top: 0;
+    font-style: italic;
 }
 
 .carousel-btn {
@@ -625,11 +620,11 @@ code {
 }
 
 .carousel-btn-prev {
-    left: -0.5rem;
+    left: -1rem;
 }
 
 .carousel-btn-next {
-    right: -0.5rem;
+    right: -1rem;
 }
 
 .carousel-indicators {
@@ -661,6 +656,86 @@ code {
 .indicator.active {
     background-color: #ffffff;
     transform: scale(1.3);
+}
+
+/* Pre and code blocks */
+pre {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+code {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.9rem !important; /* font size */
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* BibTeX section */
+#bibtex-code {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+    border: 1px solid #333333;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    /* border-radius: 8px;
+    padding: 1.5rem; */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+
+    text-decoration: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* 修复拷贝按钮样式 */
+.bibtex-container {
+    position: relative;
+}
+
+.copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.copy-button:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    transform: scale(1.05);
+}
+
+.copy-button i {
+    color: #ffffff !important;
+    font-size: 16px;
+}
+
+/* 移除可能导致线条的通用样式 */
+pre, code, #bibtex-code {
+    -webkit-text-decoration-line: none !important;
+    text-decoration-line: none !important;
+    text-decoration: none !important;
+    border-image: none !important;
+    background-image: none !important;
 }
 
 /* Responsive adjustments for carousel */

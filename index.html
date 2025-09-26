@@ -186,11 +186,13 @@
           <p class="content has-text-justified mb-4">
             Currently, we have open-sourced code and weights for RDT2-VQ and RDT2-FM. Other components, including data, code, and weights for other models, will be released shortly.
           </p>
-          <div style="margin-top: 5%;">
+          <!-- <div style="margin-top: 5%;"> -->
+          <figure class="video-figure" style="margin-top: 5%;">
             <video style="width:100%; height:auto; margin: 0%;" controls muted loading="lazy" autoplay loop playsinline>
               <source src="./static/videos/demo_compressed.mp4" type="video/mp4">
             </video>
-          </div>
+            <figcaption class="video-caption">Our introduction video of RDT 2.</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -228,7 +230,7 @@
             <video autoplay loop muted playsinline>
                 <source src="static/videos/umi.mp4" type="video/mp4">
             </video>
-            <figcaption class="video-caption">Caption</figcaption>
+            <figcaption class="video-caption">Composition of our UMI hardware.</figcaption>
           </figure>
           <p class="content has-text-justified mb-4">
             Since our hardware provides a unified end-effector across robots and humans, the embodiment gap is minimized, and models trained using such UMI data can be <b>zero-shot</b> deployed on any robot arm. No tele-operation. No human data collection. No fine-tuning. It is totally plug-and-play. All you need to do is: purchase the specified camera and gripper, use the correct flange and 3D printed camera bracket for mounting, and align the TCP coordinate system.
@@ -237,7 +239,7 @@
             <video autoplay loop muted playsinline>
                 <source src="static/videos/deployment.mp4" type="video/mp4">
             </video>
-            <figcaption class="video-caption">Caption</figcaption>
+            <figcaption class="video-caption">Easily deployable on any robot arm.</figcaption>
           </figure>
       </div>
     </div>
@@ -353,7 +355,7 @@
             </div>
             <!-- Caption Display Area -->
             <div class="video-caption-container">
-              <span class="video-caption" id="videoCaption">Loading caption...</span>
+              <span class="video-caption prompt" id="videoCaption">Loading caption...</span>
             </div>
             <div class="carousel-indicators">
               <div class="indicator active" data-index="0"></div>
@@ -406,7 +408,7 @@
             <video autoplay loop muted playsinline>
                 <source src="static/videos/vla_pretrain.mp4" type="video/mp4">
             </video>
-            <figcaption class="video-caption">Caption</figcaption>
+            <figcaption class="video-caption">Stage 1 (RDT2-VQ): pretrain VLM with discrete action tokens.</figcaption>
           </figure>
           <p class="content mb-4">
             <b>Stage 2</b>
@@ -421,7 +423,7 @@
             <video autoplay loop muted playsinline>
                 <source src="static/videos/diffusion_train.mp4" type="video/mp4">
             </video>
-            <figcaption class="video-caption">Caption</figcaption>
+            <figcaption class="video-caption">Stage 2 (RDT2-FM): train RDT action expert with flow-matching loss.</figcaption>
           </figure>
           <p class="content mb-4">
             <b>Stage 3</b>
@@ -433,7 +435,7 @@
             <video autoplay loop muted playsinline>
                 <source src="static/videos/speed.mp4" type="video/mp4">
             </video>
-            <figcaption class="video-caption">Caption</figcaption>
+            <figcaption class="video-caption">Comparisons of inference speed between ours and baselines.</figcaption>
           </figure>
           <p class="content has-text-justified mb-4">
             The outcome model in this stage is named <i>RDT2-UltraFast</i>. The model is the fastest since it only requires one forward pass of Qwen and one forward pass of the 400M RDT model. This is crucial for many tasks that require real-time responses, such as playing table tennis.
@@ -442,19 +444,24 @@
             <video autoplay loop muted playsinline>
                 <source src="static/videos/distillation.mp4" type="video/mp4">
             </video>
-            <figcaption class="video-caption">Caption</figcaption>
+            <figcaption class="video-caption">Stage 3 (RDT2-UltraFast): distill RDT2-FM into a one-step diffusion policy.</figcaption>
           </figure>
           <p class="content mb-4">
             <b>Model Family</b>
           </p>
           <p class="content has-text-justified mb-4">
             We list the model family of RDT2 as follows:
+          </p>
+          <p class="content has-text-justified mb-4">
             <ul style="list-style-type: disc; margin-left: 2%; margin-bottom: 2%;">
               <li><b>RDT2-VQ</b>: Stage 1, superior instruction following, slow inference, RL support, released🎉</li>
               <li><b>RDT2-FM</b>: Stage 2, better performance, fast inference, no RL support for now, released🎉</li>
               <li><b>RDT2-FM-Post</b>: Stage 2, twin of RDT2-FM, optimized performance on UR and Franka, coming🔜</li>
               <li><b>RDT2-UltraFast</b>: Stage 3, better performance, ultra-fast inference, no RL support for now, coming🔜</li>
             </ul>
+          </p>
+          <p class="content has-text-justified mb-4">
+            More models and code, including reinforcement learning, are coming soon. Stay tuned!
           </p>
         </div>
     </div>
@@ -599,7 +606,7 @@
         <p class="content has-text-justified mb-4">
             If you find our work helpful, please cite us:
         </p>
-        <div style="position: relative;">
+        <div class="bibtex-container">
             <pre><code id="bibtex-code">@software{rdt2,
     title={RDT2: Enabling Zero-Shot Cross-Embodiment Generalization by Scaling Up UMI Data},
     author={RDT Team},
@@ -607,9 +614,9 @@
     month={September},
     year={2025}
 }</code></pre>
-            <button onclick="copyToClipboard()" style="position: absolute; top: 5px; right: 5px; background: none; border: none; cursor: pointer;">
+            <button onclick="copyToClipboard()" class="copy-button">
                 <!-- 粘贴图标，可以使用Font Awesome 图标库 -->
-                <i class="fa fa-paste" aria-hidden="true"></i>
+                <i class="fa fa-copy" aria-hidden="true"></i>
             </button>
         </div>
         <p class="content has-text-justified mb-4">
