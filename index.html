@@ -65,7 +65,7 @@
     <!-- Full Width Video Container -->
     <div class="hero-video-container">
       <div class="hero-video-placeholder">
-        <video style="width:100%; height:auto; margin: 0%;" muted loading="lazy" autoplay loop playsinline>
+        <video style="width:100%; height:auto; margin: 0%;" muted autoplay loop playsinline>
           <source src="./static/videos/background_compressed.mp4" type="video/mp4">
         </video>
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.1);"></div>
@@ -227,7 +227,7 @@
             The original UMI [<a href="https://umi-gripper.github.io/">2</a>], manufactured using 3D printing, lacks the requisite strength for long-term, high-frequency data collection. To address this limitation, we redesigned the mechanical structure. The new product utilizes a robust nylon 66 and glass fiber composite material, fabricated using CNC precision machining. We abandoned the original SLAM tracking method since it frequently fails in texture-less indoor environments. Instead, we adopted an infrared light-based positioning system (HTC VIVE Tracker 3.0 [<a href="https://www.vive.com/us/accessory/tracker3/">4</a>]) to track the 6DoF pose of the end-effector.
           </p>
           <figure class="video-figure">
-            <video autoplay loop muted playsinline>
+            <video autoplay loop muted playsinline loading="lazy">
                 <source src="static/videos/umi.mp4" type="video/mp4">
             </video>
             <figcaption class="video-caption">Composition of our UMI hardware.</figcaption>
@@ -236,7 +236,7 @@
             Since our hardware provides a unified end-effector across robots and humans, the embodiment gap is minimized, and models trained using such UMI data can be <b>zero-shot</b> deployed on any robot arm. No tele-operation. No human data collection. No fine-tuning. It is totally plug-and-play. All you need to do is: purchase the specified camera and gripper, use the correct flange and 3D printed camera bracket for mounting, and align the TCP coordinate system.
           </p>
           <figure class="video-figure">
-            <video autoplay loop muted playsinline>
+            <video autoplay loop muted playsinline loading="lazy">
                 <source src="static/videos/deployment.mp4" type="video/mp4">
             </video>
             <figcaption class="video-caption">Easily deployable on any robot arm.</figcaption>
@@ -254,7 +254,7 @@
           </p>
           
           <!-- Dataset Video Carousel -->
-          <div class="dataset-carousel-container">
+          <div class="dataset-carousel-container" id="datasetCarousel">
             <div class="dataset-carousel">
               <button class="carousel-btn carousel-btn-prev" id="prevBtn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -270,72 +270,72 @@
               <div class="carousel-track-container">
                 <div class="carousel-track" id="carouselTrack">
                   <div class="carousel-slide active">
-                    <video autoplay muted loop playsinline>
+                    <video autoplay muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/038_ep_20250615_150427_combined_6-38s.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/038_ep_20250624_093057_combined_0-7s.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/040_ep_20250628_114524_combined_0-7s.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/044_ep_20250625_163518_combined_0-8s.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/046_ep_20250705_131508_combined.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/058_ep_20250626_094940_combined.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/071_ep_20250604_155522_combined_0-12s.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/071_ep_20250619_202150_combined_2-10s.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/071_ep_20250623_114753_combined_1-6s.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/084_ep_20250609_145231_combined_4-11s.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/023_ep_20250621_143026_combined_2-20s.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/033_ep_20250616_095612_combined.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/033_ep_20250619_094318_combined_0-11s.mp4" type="video/mp4">
                     </video>
                   </div>
                   <div class="carousel-slide">
-                    <video muted loop playsinline>
+                    <video muted loop playsinline loading="lazy">
                       <source src="./static/videos/dataset/036_ep_20250621_135355_combined_0-7s.mp4" type="video/mp4">
                     </video>
                   </div>
@@ -405,7 +405,7 @@
             The outcome model in this stage is named <i>RDT2-VQ</i>. It is slower than other RDT2 variants as it needs to generate 27 tokens autoregressively (i.e., 27 forward passes) to obtain an action chunk.
           </p>
           <figure class="video-figure">
-            <video autoplay loop muted playsinline>
+            <video autoplay loop muted playsinline loading="lazy">
                 <source src="static/videos/vla_pretrain.mp4" type="video/mp4">
             </video>
             <figcaption class="video-caption">Stage 1 (RDT2-VQ): pretrain VLM with discrete action tokens.</figcaption>
@@ -420,7 +420,7 @@
             The outcome model in this stage is named <i>RDT2-FM</i>. We then mixed a tiny amount of real-robot data of UR and Franka with the original UMI data for post-training. We call this post-trained model <i>RDT2-FM-Post</i> to distinguish it from the original. These two models are much faster than the first since they only require one forward pass of Qwen and five forward passes of the 400M RDT model. 
           </p>
           <figure class="video-figure">
-            <video autoplay loop muted playsinline>
+            <video autoplay loop muted playsinline loading="lazy">
                 <source src="static/videos/diffusion_train.mp4" type="video/mp4">
             </video>
             <figcaption class="video-caption">Stage 2 (RDT2-FM): train RDT action expert with flow-matching loss.</figcaption>
@@ -432,7 +432,7 @@
             In Stage 3, we distilled RDT2-FM into a one-step diffusion policy without performance drop, where the Qwen backbone still stayed frozen. The model can map pure noise directly to robot actions through only a single diffusion step, similar to GAN [<a href="https://arxiv.org/abs/1406.2661">16</a>].
           </p>
           <figure class="video-figure">
-            <video autoplay loop muted playsinline>
+            <video autoplay loop muted playsinline loading="lazy">
                 <source src="static/videos/speed.mp4" type="video/mp4">
             </video>
             <figcaption class="video-caption">Comparisons of inference speed between ours and baselines.</figcaption>
@@ -503,53 +503,312 @@
             <br>
             Note: The instruction prompt and play speed are shown below each video accordingly.
           </p>
-          <div style="display: flex; justify-content: center; flex-wrap: wrap;">
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/2.mp4" type="video/mp4">
-            </video>
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/3.mp4" type="video/mp4">
-            </video>
-            <video style="width:45%; height:auto; margin: 2%;" controls muted loading="lazy" autoplay loop playsinline>
-              <source src="./static/videos/4.mp4" type="video/mp4">
-            </video>
-            <img src="./static/videos/cups.png" style="width:45%; height:auto; margin: 2%;"
-              alt="Water level pouring with left hand" style="max-width: 45%; margin: 5px;">
+          <div class="dataset-carousel-container" id="arrowCarousel">
+            <div class="dataset-carousel">
+              <button class="carousel-btn carousel-btn-prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="arrowGradientLeft3" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="url(#arrowGradientLeft3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="carousel-track-container">
+                <div class="carousel-track">
+                  <div class="carousel-slide active">
+                    <video autoplay muted loop playsinline loading="lazy">
+                      <source src="./static/videos/arrow.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="carousel-slide">
+                    <video muted loop playsinline loading="lazy">
+                      <source src="./static/videos/arrow_countdown.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-btn carousel-btn-next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="arrowGradientRight3" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="url(#arrowGradientRight3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="video-caption-container">
+              <span class="video-caption prompt">Loading caption...</span>
+            </div>
+            <div class="carousel-indicators">
+              <div class="indicator active" data-index="0"></div>
+              <div class="indicator" data-index="1"></div>
+            </div>
           </div>
+
+          <div class="dataset-carousel-container" id="incenseCarousel">
+            <div class="dataset-carousel">
+              <button class="carousel-btn carousel-btn-prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="arrowGradientLeft4" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="url(#arrowGradientLeft4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="carousel-track-container">
+                <div class="carousel-track">
+                  <div class="carousel-slide active">
+                    <video autoplay muted loop playsinline loading="lazy">
+                      <source src="./static/videos/incense_compressed.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="carousel-slide">
+                    <video muted loop playsinline loading="lazy">
+                      <source src="./static/videos/incense_close_compressed.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-btn carousel-btn-next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="arrowGradientRight4" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="url(#arrowGradientRight4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="video-caption-container">
+              <span class="video-caption prompt">Loading caption...</span>
+            </div>
+            <div class="carousel-indicators">
+              <div class="indicator active" data-index="0"></div>
+              <div class="indicator" data-index="1"></div>
+            </div>
+          </div>
+          
+          <div class="dataset-carousel-container" id="pingpongCarousel">
+            <div class="dataset-carousel">
+              <button class="carousel-btn carousel-btn-prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="arrowGradientLeft5" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="url(#arrowGradientLeft5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="carousel-track-container">
+                <div class="carousel-track">
+                  <div class="carousel-slide active">
+                    <video autoplay muted loop playsinline loading="lazy">
+                      <source src="./static/videos/pingpong.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="carousel-slide">
+                    <video muted loop playsinline loading="lazy">
+                      <source src="./static/videos/pingpong_slow.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-btn carousel-btn-next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="arrowGradientRight5" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="url(#arrowGradientRight5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="video-caption-container">
+              <span class="video-caption prompt">Loading caption...</span>
+            </div>
+            <div class="carousel-indicators">
+              <div class="indicator active" data-index="0"></div>
+              <div class="indicator" data-index="1"></div>
+            </div>
+          </div>
+
+          Deformable
+
+          <div class="dataset-carousel-container" id="unzipCarousel">
+            <div class="dataset-carousel">
+              <button class="carousel-btn carousel-btn-prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="arrowGradientLeft6" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="url(#arrowGradientLeft6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="carousel-track-container">
+                <div class="carousel-track">
+                  <div class="carousel-slide active">
+                    <video autoplay muted loop playsinline loading="lazy">
+                      <source src="./static/videos/unzip_compressed.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="carousel-slide">
+                    <video muted loop playsinline loading="lazy">
+                      <source src="./static/videos/unzip_gopro_compressed.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="carousel-slide">
+                    <video muted loop playsinline loading="lazy">
+                      <source src="./static/videos/unzip_close_compressed.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-btn carousel-btn-next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="arrowGradientRight6" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="url(#arrowGradientRight6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="video-caption-container">
+              <span class="video-caption prompt">Loading caption...</span>
+            </div>
+            <div class="carousel-indicators">
+              <div class="indicator active" data-index="0"></div>
+              <div class="indicator" data-index="1"></div>
+              <div class="indicator" data-index="2"></div>
+            </div>
+          </div>
+
+          <div class="dataset-carousel-container" id="foldCarousel">
+            <div class="dataset-carousel">
+              <button class="carousel-btn carousel-btn-prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="arrowGradientLeft7" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="url(#arrowGradientLeft7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="carousel-track-container">
+                <div class="carousel-track">
+                  <div class="carousel-slide active">
+                    <video autoplay muted loop playsinline loading="lazy">
+                      <source src="./static/videos/fold_compressed.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="carousel-slide">
+                    <video muted loop playsinline loading="lazy">
+                      <source src="./static/videos/fold_orange_compressed.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="carousel-slide">
+                    <video muted loop playsinline loading="lazy">
+                      <source src="./static/videos/fold_blue_compressed.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="carousel-slide">
+                    <video muted loop playsinline loading="lazy">
+                      <source src="./static/videos/fold_black_compressed.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-btn carousel-btn-next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="arrowGradientRight7" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="url(#arrowGradientRight7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="video-caption-container">
+              <span class="video-caption prompt">Loading caption...</span>
+            </div>
+            <div class="carousel-indicators">
+              <div class="indicator active" data-index="0"></div>
+              <div class="indicator" data-index="1"></div>
+              <div class="indicator" data-index="2"></div>
+              <div class="indicator" data-index="3"></div>
+            </div>
+          </div>
+
+          Instruction following
+          
+          <div class="dataset-carousel-container" id="plateCarousel">
+            <div class="dataset-carousel">
+              <button class="carousel-btn carousel-btn-prev">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="arrowGradientLeft8" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="url(#arrowGradientLeft8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <div class="carousel-track-container">
+                <div class="carousel-track">
+                  <div class="carousel-slide active">
+                    <video autoplay muted loop playsinline loading="lazy">
+                      <source src="./static/videos/plate.mp4" type="video/mp4">
+                    </video>
+                  </div>
+
+                </div>
+              </div>
+              <button class="carousel-btn carousel-btn-next">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="arrowGradientRight8" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" style="stop-color:#58D8FB;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#BE6AEF;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="url(#arrowGradientRight8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="video-caption-container">
+              <span class="video-caption prompt">Loading caption...</span>
+            </div>
+            <div class="carousel-indicators">
+              <div class="indicator active" data-index="0"></div>
+            </div>
+          </div>
+
         </div>
-
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const video1 = document.getElementById('video1');
-          const video2 = document.getElementById('video2');
-          let video1Ended = false;
-          let video2Ended = false;
-
-          function checkBothEnded() {
-            if (video1Ended && video2Ended) {
-              setTimeout(() => {
-                video1.play();
-                video2.play();
-                video1Ended = false;
-                video2Ended = false;
-              }, 1000);
-            }
-          }
-
-          video1.addEventListener('ended', function () {
-            video1Ended = true;
-            checkBothEnded();
-          });
-
-          video2.addEventListener('ended', function () {
-            video2Ended = true;
-            checkBothEnded();
-          });
-
-          video1.play();
-          video2.play();
-        });
-      </script>
     </div>
     </div>
   </section>
@@ -649,213 +908,128 @@ function copyToClipboard() {
   </footer>
 
   <!-- Dataset Video Carousel JavaScript -->
+  <script src="./static/js/carousel.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      let currentIndex = 0;
-      const carouselTrack = document.getElementById('carouselTrack');
-      const slides = document.querySelectorAll('.carousel-slide');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const indicators = document.querySelectorAll('.indicator');
-      const totalSlides = slides.length;
-
-      // Video filenames (without extension) for loading captions
-      const videoNames = [
-        '038_ep_20250615_150427_combined_6-38s',
-        '038_ep_20250624_093057_combined_0-7s',
-        '040_ep_20250628_114524_combined_0-7s',
-        '044_ep_20250625_163518_combined_0-8s',
-        '046_ep_20250705_131508_combined',
-        '058_ep_20250626_094940_combined',
-        '071_ep_20250604_155522_combined_0-12s',
-        '071_ep_20250619_202150_combined_2-10s',
-        '071_ep_20250623_114753_combined_1-6s',
-        '084_ep_20250609_145231_combined_4-11s',
-        '023_ep_20250621_143026_combined_2-20s',
-        '033_ep_20250616_095612_combined',
-        '033_ep_20250619_094318_combined_0-11s',
-        '036_ep_20250621_135355_combined_0-7s'
-      ];
-
-      // Function to load caption for a video
-      async function loadCaption(videoName) {
-        try {
-          const response = await fetch(`./static/videos/dataset/${videoName}.txt`);
-          if (response.ok) {
-            const caption = await response.text();
-            return caption.trim();
-          }
-        } catch (error) {
-          console.log('Could not load caption for:', videoName);
-        }
-        return videoName; // Fallback to filename if caption loading fails
-      }
-
-      // Load all captions
-      const captions = {};
-      async function loadAllCaptions() {
-        for (let i = 0; i < videoNames.length; i++) {
-          captions[i] = await loadCaption(videoNames[i]);
-        }
-        // Update the initial caption display
-        updateCaptionDisplay(0);
-      }
-
-      function updateCaptionDisplay(index) {
-        const captionElement = document.getElementById('videoCaption');
-        if (captionElement && captions[index]) {
-          captionElement.textContent = captions[index];
-        }
-      }
-
-      function updateCarousel(index, animated = true) {
-        currentIndex = index;
-        
-        // Calculate transform percentage
-        const translateX = -(currentIndex * (100 / totalSlides));
-        
-        // Apply transition only if animated
-        if (animated) {
-          carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)';
-        } else {
-          carouselTrack.style.transition = 'none';
-        }
-        
-        // Move the carousel track
-        carouselTrack.style.transform = `translateX(${translateX}%)`;
-        
-        // Update active slide
-        slides.forEach((slide, i) => {
-          const video = slide.querySelector('video');
-          if (i === currentIndex) {
-            slide.classList.add('active');
-            // Play the current video
-            video.play().catch(e => {
-              console.log('Auto-play prevented:', e);
-            });
-          } else {
-            slide.classList.remove('active');
-            // Pause other videos
-            video.pause();
-          }
-        });
-        
-        // Update indicators
-        indicators.forEach((indicator, i) => {
-          indicator.classList.toggle('active', i === currentIndex);
-        });
-
-        // Update caption display
-        updateCaptionDisplay(currentIndex);
-      }
-
-      function nextSlide() {
-        const newIndex = (currentIndex + 1) % totalSlides;
-        updateCarousel(newIndex);
-      }
-
-      function prevSlide() {
-        const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateCarousel(newIndex);
-      }
-
-      // Event listeners for buttons
-      nextBtn.addEventListener('click', nextSlide);
-      prevBtn.addEventListener('click', prevSlide);
-
-      // Event listeners for indicators
-      indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-          updateCarousel(index);
-        });
+      const datasetCarousel = new VideoCarousel({
+        containerId: 'datasetCarousel',
+        loadCaptionsFromFile: true,
+        videoNames: [
+          '038_ep_20250615_150427_combined_6-38s',
+          '038_ep_20250624_093057_combined_0-7s',
+          '040_ep_20250628_114524_combined_0-7s',
+          '044_ep_20250625_163518_combined_0-8s',
+          '046_ep_20250705_131508_combined',
+          '058_ep_20250626_094940_combined',
+          '071_ep_20250604_155522_combined_0-12s',
+          '071_ep_20250619_202150_combined_2-10s',
+          '071_ep_20250623_114753_combined_1-6s',
+          '084_ep_20250609_145231_combined_4-11s',
+          '023_ep_20250621_143026_combined_2-20s',
+          '033_ep_20250616_095612_combined',
+          '033_ep_20250619_094318_combined_0-11s',
+          '036_ep_20250621_135355_combined_0-7s'
+        ]
       });
 
-      // Keyboard navigation
-      document.addEventListener('keydown', function(e) {
-        // Only handle keyboard events when carousel is in view
-        const carouselContainer = document.querySelector('.dataset-carousel-container');
-        const rect = carouselContainer.getBoundingClientRect();
-        const isInView = rect.top < window.innerHeight && rect.bottom > 0;
-        
-        if (isInView) {
-          if (e.key === 'ArrowLeft') {
-            e.preventDefault();
-            prevSlide();
-          } else if (e.key === 'ArrowRight') {
-            e.preventDefault();
-            nextSlide();
+      const arrowCarousel = new VideoCarousel({
+        containerId: 'arrowCarousel',
+        loadCaptionsFromFile: false,
+        videos: [
+          {
+            src: './static/videos/arrow.mp4',
+            caption: '"Use a shield to block incoming arrows." — over-the-shoulder shot'
+          },
+          {
+            src: './static/videos/arrow_countdown.mp4', 
+            caption: '"Use a shield to block incoming arrows." — side shot'
           }
-        }
+        ]
       });
 
-      // Touch/swipe support for mobile
-      let touchStartX = 0;
-      let touchEndX = 0;
-      let isDragging = false;
-
-      carouselTrack.addEventListener('touchstart', function(e) {
-        touchStartX = e.changedTouches[0].screenX;
-        isDragging = true;
-      }, { passive: true });
-
-      carouselTrack.addEventListener('touchmove', function(e) {
-        if (!isDragging) return;
-        
-        touchEndX = e.changedTouches[0].screenX;
-        const diff = touchStartX - touchEndX;
-        
-        // Optional: Add real-time dragging visual feedback
-        const dragDistance = diff / window.innerWidth * 100;
-        const baseTranslateX = -(currentIndex * (100 / totalSlides));
-        carouselTrack.style.transition = 'none';
-        carouselTrack.style.transform = `translateX(${baseTranslateX - dragDistance}%)`;
-      }, { passive: true });
-
-      carouselTrack.addEventListener('touchend', function(e) {
-        if (!isDragging) return;
-        isDragging = false;
-        
-        const swipeThreshold = 50;
-        const diff = touchStartX - touchEndX;
-        
-        if (Math.abs(diff) > swipeThreshold) {
-          if (diff > 0) {
-            // Swiped left - next slide
-            nextSlide();
-          } else {
-            // Swiped right - previous slide
-            prevSlide();
+      const incenseCarousel = new VideoCarousel({
+        containerId: 'incenseCarousel',
+        loadCaptionsFromFile: false,
+        videos: [
+          {
+            src: './static/videos/incense_compressed.mp4',
+            caption: '"Grab the incense, light it, shake it quickly to extinguish it, and finally insert it into the incense burner." — 1x speed'
+          },
+          {
+            src: './static/videos/incense_close_compressed.mp4',
+            caption: '"Grab the incense, light it, shake it quickly to extinguish it, and finally insert it into the incense burner." — 1x speed'
           }
-        } else {
-          // Snap back to current slide
-          updateCarousel(currentIndex);
-        }
-      }, { passive: true });
-
-      // Handle video ended events to loop individual videos
-      slides.forEach((slide, index) => {
-        const video = slide.querySelector('video');
-        video.addEventListener('ended', function() {
-          // Loop the current video if it's the active one
-          if (index === currentIndex) {
-            video.currentTime = 0;
-            video.play().catch(e => {
-              console.log('Auto-play prevented:', e);
-            });
-          }
-        });
+        ]
       });
 
-      // Initialize carousel
-      updateCarousel(0, false);
+      const pingpongCarousel = new VideoCarousel({
+        containerId: 'pingpongCarousel',
+        loadCaptionsFromFile: false,
+        videos: [
+          {
+            src: './static/videos/pingpong.mp4',
+            caption: '"Use a paddle to hit the table tennis ball back." — 1x speed'
+          },
+          {
+            src: './static/videos/pingpong_slow.mp4',
+            caption: '"Use a paddle to hit the table tennis ball back." — 0.05x speed'
+          }
+        ]
+      });
+
+      const unzipCarousel = new VideoCarousel({
+        containerId: 'unzipCarousel',
+        loadCaptionsFromFile: false,
+        videos: [
+          {
+            src: './static/videos/unzip_compressed.mp4',
+            caption: '"Unzip the backpack." — 1x speed'
+          },
+          {
+            src: './static/videos/unzip_gopro_compressed.mp4',
+            caption: '"Unzip the backpack." — GoPro view, 1x speed'
+          },
+          {
+            src: './static/videos/unzip_close_compressed.mp4',
+            caption: '"Unzip the backpack." — close-up view, 1x speed'
+          }
+        ]
+      });
+
+      const foldCarousel = new VideoCarousel({
+        containerId: 'foldCarousel',
+        loadCaptionsFromFile: false,
+        videos: [
+          {
+            src: './static/videos/fold_compressed.mp4',
+            caption: '"Fold the right and left sleeves inwards, then fold the bottom of the garment upwards." — seen, 1x speed'
+          },
+          {
+            src: './static/videos/fold_orange_compressed.mp4',
+            caption: '"Fold the right and left sleeves inwards, then fold the bottom of the garment upwards." — unseen, 1x speed'
+          },
+          {
+            src: './static/videos/fold_blue_compressed.mp4',
+            caption: '"Fold the right and left sleeves inwards, then fold the bottom of the garment upwards." — unseen, 1x speed'
+          },
+          {
+            src: './static/videos/fold_black_compressed.mp4',
+            caption: '"Fold the right and left sleeves inwards, then fold the bottom of the garment upwards." — unseen, 1x speed'
+          }
+        ]
+      });
+
+      const plateCarousel = new VideoCarousel({
+        containerId: 'plateCarousel',
+        loadCaptionsFromFile: false,
+        videos: [
+          {
+            src: './static/videos/plate.mp4',
+            caption: 'The robot sets the table step by step according to human instructions. — 16x speed'
+          }
+        ]
+      });
       
-      // Load all captions
-      loadAllCaptions();
-      
-      // Restore transition after initialization
-      setTimeout(() => {
-        carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)';
-      }, 100);
     });
   </script>
 
